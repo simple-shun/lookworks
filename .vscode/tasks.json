@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Python：运行当前文件（uv）",
+            "type": "process",
+            "command": "uv",
+            "args": ["run", "--locked", "python", "${file}"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {"PATH": "${env:HOME}/.local/bin:${env:PATH}"}
+            },
+            "group": {"kind": "build", "isDefault": true},
+            "problemMatcher": []
+        },
+        {
+            "label": "Python：同步项目依赖（uv）",
+            "type": "process",
+            "command": "uv",
+            "args": ["sync", "--locked"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {"PATH": "${env:HOME}/.local/bin:${env:PATH}"}
+            },
+            "problemMatcher": []
+        }
+    ]
+}
